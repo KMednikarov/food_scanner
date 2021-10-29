@@ -17,7 +17,7 @@ void main() {
         final result = await networkInfo.isConnected;
         // Utilizing Dart's default referential equality.
         // Only references to the same object are equal.
-        expect(result, tHasConnectionFuture);
+        expect(result, equals(tHasConnectionFuture));
       },
     );
   });

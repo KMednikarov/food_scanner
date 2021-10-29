@@ -49,6 +49,9 @@ void main() {
     final productModel =
         ProductModel(barcode: "12345", productName: "test product");
     test('should call SharedPreferences to cache the data', () {
+      when(() => sharedPreferences.setString(any(), any()))
+          .thenAnswer((_) => Future<bool>.value(true));
+
       dataSource.cacheProduct(productModel);
 
       final jsonString = json.encode(productModel.toJson());
