@@ -9,7 +9,7 @@ import '../repositories/product_item_repository.dart';
 class GetProductItem implements UseCase<ProductItem, Params> {
   final ProductItemRepository repository;
 
-  GetProductItem(this.repository);
+  GetProductItem({required this.repository});
 
   @override
   Future<Either<Failure, ProductItem>> call(Params params) async {
@@ -19,9 +19,8 @@ class GetProductItem implements UseCase<ProductItem, Params> {
 
 class Params extends Equatable {
   final String barcode;
-  final ProductItem product;
 
-  Params({required this.barcode, required this.product});
+  Params({required this.barcode});
 
   @override
   List<Object?> get props => [

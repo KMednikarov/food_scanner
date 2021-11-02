@@ -1,4 +1,4 @@
-import 'package:food_scanner/core/error/exceptions.dart';
+import '../../../../core/error/exceptions.dart';
 
 import '../models/product_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,7 +13,7 @@ abstract class ProductItemLocalDataSource {
   /// Cache a product to local data.
   ///
   /// Throws a [CacheException] for all error codes.
-  void cacheProduct(ProductModel product);
+  Future<void> cacheProduct(ProductModel product);
 }
 
 const CACHED_PRODUCT_ITEM = 'CACHED_PRODUCT_ITEM';
@@ -26,8 +26,8 @@ class ProductItemLocalDataSourceImpl extends ProductItemLocalDataSource {
   });
 
   @override
-  void cacheProduct(ProductModel product) {
-    sharedPreferences.setString(
+  Future<void> cacheProduct(ProductModel product) {
+    return sharedPreferences.setString(
       CACHED_PRODUCT_ITEM,
       json.encode(product.toJson()),
     );
