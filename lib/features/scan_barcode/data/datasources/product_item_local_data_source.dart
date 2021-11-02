@@ -1,4 +1,4 @@
-import 'package:food_scanner/core/error/exceptions.dart';
+import '../../../../core/error/exceptions.dart';
 
 import '../models/product_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';

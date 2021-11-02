@@ -1,4 +1,4 @@
-import 'package:food_scanner/features/scan_barcode/domain/entities/product_item.dart';
+import '../../domain/entities/product_item.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 
 class ProductModel extends ProductItem {

@@ -7,11 +7,11 @@ abstract class ScanBarcodeEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class GetProductItemFromScan extends ScanBarcodeEvent {
-  final ProductItem productItem;
+class GetProductItemEvent extends ScanBarcodeEvent {
+  final String barcode;
 
-  GetProductItemFromScan({required this.productItem});
+  GetProductItemEvent({required this.barcode});
 
   @override
-  List<Object> get props => [productItem];
+  List<Object> get props => [barcode];
 }

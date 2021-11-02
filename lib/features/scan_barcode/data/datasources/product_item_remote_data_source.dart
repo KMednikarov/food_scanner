@@ -1,5 +1,5 @@
-import 'package:food_scanner/core/error/exceptions.dart';
-import 'package:food_scanner/features/scan_barcode/data/models/product_model.dart';
+import '../../../../core/error/exceptions.dart';
+import '../models/product_model.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 
 abstract class ProductItemRemoteDataSource {

@@ -12,7 +12,7 @@ void main() {
   GetProductItem usecase;
   ProductItemRepository repository;
   repository = MockProductItemRepository();
-  usecase = GetProductItem(repository);
+  usecase = GetProductItem(repository: repository);
 
   final String tBarcode = '123';
   final String productName = 'Product Name';
@@ -23,11 +23,8 @@ void main() {
         .thenAnswer((_) async => Right(tProductItem));
     //act
     final result = await usecase(Params(
-        barcode: tBarcode,
-        product: ProductItem(
-          barcode: tBarcode,
-          productName: productName,
-        )));
+      barcode: tBarcode,
+    ));
     //assert
     expect(result, Right(tProductItem));
     verify(() => repository.getProductItem(any()));
